@@ -6,6 +6,7 @@ class DebounceThrottle extends React.Component {
     this.props = props;
   }
 
+
   /*防抖*/
   static debounceFunction() {
     let timer = null;
@@ -23,6 +24,7 @@ class DebounceThrottle extends React.Component {
 //      }, delay);
 //    };
   }
+
 
   /*节流*/
   static throttleFunction(func, delay) {

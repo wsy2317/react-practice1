@@ -77,7 +77,6 @@ class ButtonComponent extends React.Component {
     this.setState({renderChild: false});
   }
   render() {
-
     return <div>this is comp2 {this.props.name} {this.props.age}
       <hr/>
       <input id="aa" style={{
