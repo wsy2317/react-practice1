@@ -1,0 +1,34 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import FuncComp from '@/components/func-component.jsx';
+import ButtonComp from '@/components/button-component.jsx';
+
+//import './index.css';
+//import App from './App';
+//import * as serviceWorker from './serviceWorker';
+console.log("aaaaaaaaaaaaaaaaaaaaaaaa");
+const dog = {
+  age: 33,
+  name: "teddy",
+  count: "US"
+};
+const cat = {
+  age: 100,
+  name: "cat",
+  num: 1000
+};
+
+
+//ReactDOM.render(
+//  <React.StrictMode>
+//    <App />
+//  </React.StrictMode>,
+//  document.getElementById('root')
+//);
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+//serviceWorker.unregister();
+ReactDOM.render(<FuncComp {...dog}/>, document.getElementById("div1"));
+ReactDOM.render(<ButtonComp {...cat}/>, document.getElementById("div2"));
+//ReactDOM.render(<Hello3 />, document.getElementById("div2"));

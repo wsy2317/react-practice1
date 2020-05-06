@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        body {
+            display:flex;
+            min-height:100vh;
+            margin:0;
+        }
+        .scalable {
+            position:relative;
+            background-color:#eeeeee;
+        }
+        .main {
+            background-color:yellow;
+            flex:1;
+        }
+        .content {
+            padding:20px;
+        }
+        .scalable .separator {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:absolute;
+            top:0;
+            right:0;
+            width:14px;
+            height:100%;
+            background-color:white;
+            box-shadow:0 0 5px rgba(0,0,0,0.35);
+            cursor:col-resize;
+        }
+        .scalable .separator i {
+            display:inline-block;
+            height:20px;
+            width:1px;
+            background-color:grey;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="scalable">
+    <div class="content">
+        <img src="https://codingstartup.com/images/logo.svg" alt="">
+    </div>
+    <div class="separator">
+        <i></i><i></i>
+    </div>
+</div>
+<div class="main">
+    <div class="content">welcome to codingstartup</div>
+</div>
+<script type="text/javascript">
+  var startX;
+  var startWidth;
+  document.getElementsByClassName("separator")[0].addEventListener("mousedown", startDrag);
+
+  function startDrag(e) {
+    document.getElementsByClassName("separator")[0].addEventListener("mousemove", onDrag);
+    document.getElementsByClassName("separator")[0].addEventListener("mouseup", stopDrag);
+
+  }
+  function onDrag(e) {
+    startX = e.clientX;
+    startWidth = getComputedStyle(document.getElementsByClassName("separator")[0].width,10);
+    console.log(e.clientX);
+    console.log(e.clientY);
+  }
+
+  function stopDrag() {
+    document.getElementsByClassName("separator")[0].removeEventListener("mousemove",onDrag);
+    document.getElementsByClassName("separator")[0].removeEventListener("mouseup", stopDrag);
+  }
+</script>
+</body>
+</html>

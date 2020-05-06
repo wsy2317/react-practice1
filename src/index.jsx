@@ -1,29 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello1 from './components/comp1.jsx'
-import Hello2 from './components/comp2.jsx'
-//import './index.css';
-//import App from './App';
-//import * as serviceWorker from './serviceWorker';
-console.log("aaaaaaaaaaaaaaaaaaaaaaaa");
-const dog = {
-  age: 33,
-  name: "teddy",
-  count: "US"
-};
-const cat = {
-  age: 100,
-  name: "cat"
-};
-//ReactDOM.render(
-//  <React.StrictMode>
-//    <App />
-//  </React.StrictMode>,
-//  document.getElementById('root')
-//);
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
-ReactDOM.render(<Hello1 {...dog}/>, document.getElementById("div1"));
-ReactDOM.render(<Hello2 {...cat}/>, document.getElementById("div2"));
+import App from './App';
+// IE 11 support
+import 'core-js/modules/es.array.includes';
+import 'core-js/modules/es.array.fill';
+import 'core-js/modules/es.string.includes';
+import 'core-js/modules/es.string.trim';
+import 'core-js/modules/es.object.values';
+
+const appName = "athena-demo";
+ReactDOM.render(<App/>, document.body);

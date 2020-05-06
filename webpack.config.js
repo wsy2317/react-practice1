@@ -3,12 +3,13 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const htmlPlugin = new htmlWebpackPlugin({
   /*指定源文件*/
-  template: path.join(__dirname, './src/index.html'), /*指定编译后的文件名*/
-  filename: 'index.html'
+//  template: path.join(__dirname, './src/index.html'),
+  template: `${__dirname}/src/index.html`,
+  filename: 'index.html'/*指定编译后的文件名*/
 });
 module.exports = {
-  mode: 'development',
-  entry: path.join(__dirname, './src/index.jsx'),
+  mode: 'development', //  entry: path.join(__dirname, './src/index.jsx'),
+  entry: `${__dirname}/src/index.jsx`,
   plugins: [htmlPlugin],
   module: {
     /*添加一个loader，babel是jsx转js语法的*/
@@ -18,13 +19,18 @@ module.exports = {
       use: {
         loader: 'babel-loader'
       }
+    }, {
+      test: /\.css$/,
+      loader: "style-loader!css-loader?modules"
     }]
-  }, /*import的时候不用加扩展名了，webpack自动*/
+  },
+  /*import的时候不用加扩展名了，webpack自动*/
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
       /*配置一个别名，import的时候使用'@'可以直接指定到如下的路径*/
-      '@': path.join(__dirname, './src')
+//      '@': path.join(__dirname, './src')
+      '@': `${__dirname}/src`
     }
   }
 };
